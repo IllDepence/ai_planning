@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage{mathtools}
+
+\begin{document}
+\setcounter{chapter}{1}
+
+\begin{tabular}{ll}
+Course: & AI Planning\\
+Date: & 30.10.2014\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section{Exercise 1.1}
+\begin{tabular}{ l | c c c }
+     & districts & landing platforms & boys \\
+  \hline
+  King's Landing &  8 & 3 & 4\\
+  Winterfell &  2 & 1 & 1\\
+  Lannisport &  6 & 1 & 3\\
+  Meereen & 12 & 1 & 6\\
+  Volantis & 12 & 1 & 6\\
+  \hline
+  \#  & 40 & 7 & 20
+\end{tabular}\\\\
+
+\begin{tabular}{ll}
+Number of states for errand boys & = $8^4 * 2^1 * 6^3 * 12^6 * 12^6$ \\
+Number of states for dragons & = $7^3$ \\
+Number of states for 30 packages &= $40^{30}$
+\end{tabular}\\\\
+
+The number of possible different states (Size of the state space):\\
+$state space size = (8^4 * 2 * 6^3 * 12^6 * 12^6)  *  7^3  * (40^{30})\\
+state space size= 6.239 * 10^{69}$\\
+
+Traverse time needed to visit all $6.239 * 10^{69}$ states:\\
+$t = 6.239 * 10^{69} * 10^-6s\\
+t = 6.239 * 10^{63}s$
+
+\section{Exercise 1.2}
+
+\begin{enumerate}
+\item
+What's the importance of AI Planning in natural language processing/generation?
+\item
+?
+\end{enumerate}
+
+
+\end{document}
