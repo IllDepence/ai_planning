@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{mathtools}
+\setlength\parindent{0pt}
+
+\begin{document}
+\begin{center}
+\Huge{\textbf{AI Planning}}\\
+\LARGE{\textbf{Exercise Sheet 2}}
+\end{center}
+\vspace{2cm}
+\begin{tabular}{ll}
+Date: & 06.11.2014\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 2.1}
+\subsection*{(a) Transform the operator}
+
+original \newline
+$ \langle
+    \neg e \lor f ,
+  (a \triangleright ( b \triangleright c))   \land
+  (\neg d \triangleright c)  \land
+  ( \neg (\neg c \land \neg a) \triangleright (d \land \neg d) )   \land
+  (d \triangleright \neg e)  
+  \rangle
+$
+
+(7) \newline
+$ \langle
+    \neg e \lor f ,
+  ((a \land b) \triangleright c)   \land
+  (\neg d \triangleright c)  \land
+  ( \neg (\neg c \land \neg a) \triangleright (d \land \neg d) )   \land
+  (d \triangleright \neg e)  
+  \rangle
+$
+
+(9) \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)  \land
+  ( \neg (\neg c \land \neg a) \triangleright (d \land \neg d) )   \land
+  (d \triangleright \neg e)  
+  \rangle
+$
+
+(8) \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)  \land
+  ( \neg (\neg c \land \neg a) \triangleright d )   \land
+  ( \neg (\neg c \land \neg a) \triangleright \neg e )   \land
+  (d \triangleright \neg e)  
+  \rangle
+$
+
+(9) \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)  \land
+  ( \neg (\neg c \land \neg a) \triangleright d )   \land
+  (( \neg (\neg c \land \neg a) \lor d) \triangleright \neg e)  
+  \rangle
+$
+
+2x deMorgan \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)  \land
+  (( c \lor a) \triangleright d )   \land
+  (( c \lor a \lor d) \triangleright \neg e)
+  \rangle  
+$
+
+\subsection*{(b) Transform the ENF operator}
+original \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)   \land
+  ((c \lor a) \triangleright d)  \land
+  (( c \lor a \lor d) \triangleright \neg e)
+  \rangle
+$
+
+\section*{Exercise 2.2}
+
+
+\end{document}
