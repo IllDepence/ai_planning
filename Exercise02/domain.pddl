@@ -1,0 +1,12 @@
+(define (domain set-cover)
+    (:requirements :adl)
+    (:types set elem)
+    (:predicates (contains ?s - set ?e - elem)
+        (selected ?s - set)
+        (covered ?e - elem))
+    (:action select-set
+        :parameters(?s - set)
+        :effect (and (selected ?s)
+                     (forall (?x - elem)
+                        (when (contains ?s ?x)
+                            (covered ?x))))))
