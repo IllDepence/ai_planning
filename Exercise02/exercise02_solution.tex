@@ -1,5 +1,6 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage{mathtools}
+\usepackage{listings}
 \setlength\parindent{0pt}
 
 \begin{document}
@@ -84,6 +85,69 @@ $ \langle
 $
 
 \section*{Exercise 2.2}
+\textbf{(a)}
+\begin{lstlisting}[frame=single,basicstyle=\footnotesize,caption={set cover problem as a PDDL domain}]
+(define (domain set-cover)
+    (:requirements :adl)
+    (:types set elem)
+    (:predicates (contains ?s - set ?e - elem)
+        (selected ?s - set)
+        (covered ?e - elem))
+    (:action select-set
+        :parameters(?s - set)
+        :precondition (not (selected ?s))
+        :effect (and (selected ?s)
+                     (forall (?e - elem)
+                        (when (contains ?s ?e)
+                            (covered ?e))))))
+\end{lstlisting}
+\textbf{(b)}
+\begin{lstlisting}[frame=single,basicstyle=\footnotesize,caption={set cover instance as a PDDL problem}]
+(define (problem set-cover-i-1)
+    (:domain set-cover)
+    (:objects e1 e2 e3 e4 - elem s1 s2 s3 s4 s5 - set)
+    (:init (contains s1 e1)
+        (contains s2 e2)
+        (contains s2 e3)
+        (contains s3 e4)
+        (contains s4 e1)
+        (contains s4 e2)
+        (contains s5 e3)
+        (contains s5 e4))
+    (:goal (and (covered e1)
+                (covered e2)
+                (covered e3)
+                (covered e4))))
+\end{lstlisting}
+\textbf{(c)}
+\begin{lstlisting}[frame=single,basicstyle=\ttfamily\footnotesize,caption={solving set cover instance with fast-downward}]
+$ ./fast-downward.py scprob.pddl --search "astar(blind())"
+[...]
+select-set s4 (1)
+select-set s5 (1)
+Plan length: 2 step(s).
+Plan cost: 2
+Initial state h value: 1.
+Expanded 6 state(s).
+Reopened 0 state(s).
+Evaluated 16 state(s).
+Evaluations: 16
+Generated 21 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 1 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 6 state(s).
+Generated until last jump: 5 state(s).
+Number of registered states: 16
+Search time: 0s
+Total time: 0s
+Solution found.
+Peak memory: 2924 KB
+$ cat sas_plan
+(select-set s4)
+(select-set s5)
+; cost = 2 (unit cost)
+\end{lstlisting}
 
 
 \end{document}

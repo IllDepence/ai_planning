@@ -6,7 +6,8 @@
         (covered ?e - elem))
     (:action select-set
         :parameters(?s - set)
+        :precondition (not (selected ?s))
         :effect (and (selected ?s)
-                     (forall (?x - elem)
-                        (when (contains ?s ?x)
-                            (covered ?x))))))
+                     (forall (?e - elem)
+                        (when (contains ?s ?e)
+                            (covered ?e))))))

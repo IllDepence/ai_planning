@@ -12,5 +12,4 @@
     (:goal (and (covered e1)
                 (covered e2)
                 (covered e3)
-                (covered e4)
-                (covered e5))))
+                (covered e4))))
