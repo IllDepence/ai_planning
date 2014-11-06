@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, margin=1.3in]{geometry}
 \usepackage{mathtools}
 \usepackage{listings}
 \setlength\parindent{0pt}
@@ -85,8 +86,8 @@ $ \langle
 $
 
 \section*{Exercise 2.2}
-\textbf{(a)}
-\begin{lstlisting}[frame=single,basicstyle=\footnotesize,caption={set cover problem as a PDDL domain}]
+\textbf{(a-c)}
+\begin{lstlisting}[frame=single,basicstyle=\ttfamily\footnotesize,caption={set cover problem as a PDDL domain}]
 (define (domain set-cover)
     (:requirements :adl)
     (:types set elem)
@@ -101,8 +102,7 @@ $
                         (when (contains ?s ?e)
                             (covered ?e))))))
 \end{lstlisting}
-\textbf{(b)}
-\begin{lstlisting}[frame=single,basicstyle=\footnotesize,caption={set cover instance as a PDDL problem}]
+\begin{lstlisting}[frame=single,basicstyle=\ttfamily\footnotesize,caption={set cover instance as a PDDL problem}]
 (define (problem set-cover-i-1)
     (:domain set-cover)
     (:objects e1 e2 e3 e4 - elem s1 s2 s3 s4 s5 - set)
@@ -119,7 +119,6 @@ $
                 (covered e3)
                 (covered e4))))
 \end{lstlisting}
-\textbf{(c)}
 \begin{lstlisting}[frame=single,basicstyle=\ttfamily\footnotesize,caption={solving set cover instance with fast-downward}]
 $ ./fast-downward.py scprob.pddl --search "astar(blind())"
 [...]
@@ -148,6 +147,12 @@ $ cat sas_plan
 (select-set s5)
 ; cost = 2 (unit cost)
 \end{lstlisting}
-
+\textbf{(d)}\\
+- Optimal planning: every possible plan is considered. It is guaranteed that the optimal plan (lowest cost) can be identified.\\
+- Satisficing planning: it is sufficient to identify a plan that leads to the goal.\\
+- Arbitrary set covers: as long as every element is covered we're satisfied.\\
+- Cardinality minimal set covers: the goal is to pick $\mathcal{C} \subseteq \mathcal{S}$ such that every element is covered and $|\mathcal{C}|$ is minimal.\\
+Since our formalization does only define complete coverage of elements as the goal, cardinal minimality can only be achieved by applying optimal planning. Since fast-downward increments the cost of a plan for each applied operation and the only operator defined is selecting an element of $\mathcal{S}$, cost of a plan equals to $|\mathcal{C}|$. Finding the optimal plan therefore means finding the minimal $\mathcal{C} \subseteq \mathcal{S}$ such that every element is covered.\\
+In our formalization plan existence is equivalent to the existence of a set cover. If we were to include an element $e_5 \in \mathcal{U}$ such that $\forall S_i \in \mathcal{S} : e_5 \notin S_i$ there would be no possible set cover and therefore no existing plan that solves the problem.
 
 \end{document}
