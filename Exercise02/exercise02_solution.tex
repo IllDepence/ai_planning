@@ -2,6 +2,16 @@
 \usepackage[a4paper, margin=1.3in]{geometry}
 \usepackage{mathtools}
 \usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AI Planning}
+\rhead{Exercise Sheet 2}
+\lfoot{Axel Perschmann, Tarek Saier, 06.11.2014}
+\rfoot{Page \thepage\ of 3}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
 
 \begin{document}
@@ -84,6 +94,45 @@ $ \langle
   (( c \lor a \lor d) \triangleright \neg e)
   \rangle
 $
+
+identify negative literals in coditions \newline
+$ \langle
+    \textcolor{red}{\neg e} \lor f ,
+  (((a \land b) \lor \textcolor{red}{\neg d}) \triangleright c)   \land
+  ((c \lor a) \triangleright d)  \land
+  (( c \lor a \lor d) \triangleright \neg e)
+  \rangle
+$
+
+introduce $\hat{d}$=$\neg d$ and $\hat{e}$=$\neg e$ and add it for effects \newline
+$ \langle
+    \neg e \lor f ,
+  (((a \land b) \lor \neg d) \triangleright c)   \land
+  ((c \lor a) \triangleright \textcolor{red}{d \land \neg \hat{d}})  \land
+  (( c \lor a \lor d) \triangleright \textcolor{red}{\neg e \land \hat{e}})
+  \rangle
+$
+
+replace negative $d$ and $e$ with $\hat{d}$ and $\hat{e}$ in conditions \newline
+$ \langle
+    \textcolor{red}{\hat{e}} \lor f ,
+  (((a \land b) \lor \textcolor{red}{\hat{d}}) \triangleright c)   \land
+  ((c \lor a) \triangleright d \land \neg \hat{d})  \land
+  (( c \lor a \lor d) \triangleright \neg e \land \hat{e})
+  \rangle
+$
+
+(8) \newline
+$ \langle
+    \hat{e} \lor f ,
+  (((a \land b) \lor \hat{d}) \triangleright c)   \land
+  ((c \lor a) \triangleright d)  \land
+  ((c \lor a) \triangleright \neg \hat{d})  \land
+  (( c \lor a \lor d) \triangleright \neg e) \land
+  (( c \lor a \lor d) \triangleright \hat{e})
+  \rangle
+$
+\newpage
 
 \section*{Exercise 2.2}
 \textbf{(a-c)}
