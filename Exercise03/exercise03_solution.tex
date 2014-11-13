@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[a4paper, margin=1.3in]{geometry}
 \usepackage{mathtools}
+\usepackage{graphicx}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -58,6 +59,18 @@ $\Rightarrow \gamma \text{ is reachable from }ro\h w\land ju\h d \text{ by means
 \\
 //Note: less verbose from this point onwards.\\
 \\
-$regr_{go\h d}(\gamma)=$
-
+$regr_{go\h d}(\gamma)=ju\h h\land \top \land (\bot \lor (ro\h h \land \neg ro\h h)) \land \kappa= \bot$\\
+$\Rightarrow \gamma \text{ is not reachable by means of } go\h d$\\
+$\Rightarrow$ the only node to expand from is $n_1=ro\h w\land ju\h d$\\
+\\
+$regr_{go\h w}(n_1)=ro\h h\land ju\h d$ \hphantom{aaaa}(similar to $\gamma$, no further expansion)\\
+$regr_{go\h h}(n_1)=\bot$\\
+$regr_{go\h d}(n_1)=ro\h w\land ju\h h$ \hphantom{aaaa}($=n_2$)\\
+\\
+$regr_{go\h w}(n_2)=ro\h h\land ju\h h$ \hphantom{aaaa}($=n_3\models I$)\\
+\\
+\textbf{Resulting search tree:}\\
+\includegraphics[scale=0.7]{search_tree}\\
+\textbf{Resulting plan:}\\
+$go\h w$, $go\h d$, $go\h h$
 \end{document}
