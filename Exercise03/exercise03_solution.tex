@@ -29,10 +29,21 @@ Students: & Axel Perschmann, Tarek Saier
 content here
 
 \section*{Exercise 3.2}
-We start at: $\gamma=juliet\h dancing\land romeo\h at\h home$\\
-We want to reach: $I=\{romeo\h at\h home\mapsto1,juliet\h at\h home\mapsto1\}$\\
-Operators: $go\h dancing$, $go\h work$, $go\h home$\\
+(d=dancing, h=at-home, w=work, ro=romeo, ju=juliet)\\
+We start at: $\gamma=ju\h d\land ro\h h$\\
+We want to reach: $I=\{ro\h h\mapsto1,ju\h h\mapsto1\}$\\
+Operators: $go\h d$, $go\h w$, $go\h h$\\
 \\
-foo
+$regr_{go\h w}(\gamma)=ro\h h\land$\\
+\hphantom{aaaa}$((EPC_{ju\h d}(e_{go\h w})\lor (ju\h d\land \neg EPC_{\neg ju\h d}(e_{go\h w})))\land$\\
+\hphantom{aaaaaa}$(EPC_{ro\h h}(e_{go\h w})\lor (ro\h h\land \neg EPC_{\neg ro\h h}(e_{go\h w})))$\\
+\hphantom{aaaa}$) \land \kappa$\\
+$regr_{go\h w}(\gamma)=ro\h h\land$\\
+\hphantom{aaaa}$((\bot \lor (ju\h d\land \top))\land$\\
+\hphantom{aaaaaa}$(\bot \lor (ro\h h\land \bot))$\\
+\hphantom{aaaa}$) \land \kappa$\\
+$regr_{go\h w}(\gamma)=\bot$\\
+\\
+$regr_{go\h d}(\gamma)=ju\h h\land$\\
 
 \end{document}
