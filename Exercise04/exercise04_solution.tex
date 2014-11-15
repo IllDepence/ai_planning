@@ -37,9 +37,9 @@ $f(\lceil j_5(w_1)\rceil)=1+4=5$\\
 $f(\lceil j_5(b_2)\rceil)=2+2=4$\\
 Apply $j_5(b_2)$ which results in $\sigma_1$:\\
 $b_1,e,w_1,w_2,b_2$\\
-$f(\lceil m_2(b_1)\rceil)=5+2=7$\\
-$f(\lceil m_2(w_1)\rceil)=5+2=7$\\
-$f(\lceil j_2(w_2)\rceil)=5+2=7$\\
+$f(\lceil m_2(b_1)\rceil)=3+2=5$\\
+$f(\lceil m_2(w_1)\rceil)=3+2=5$\\
+$f(\lceil j_2(w_2)\rceil)=3+2=5$\\
 $\lceil j_2(b_2)\rceil=I\in closed$\\
 Apply $m_2(b_1)$ which results in $\sigma_2$:\\
 $e,b_1,w_1,w_2,b_2$\\
@@ -48,7 +48,20 @@ $b_1,w_1,e,w_2,b_2$\\
 Apply $j_2(w_2)$ which results in $\sigma_4$:\\
 $b_1,w_2,w_1,e,b_2$\\
 Expanding on $\sigma_2$:\\
-% break
+$\lceil m_1(b_1)\rceil=\sigma_1\in closed$\\
+$f(\lceil j_1(w_1)\rceil)=4+1=5$\\
+$f(\lceil j_1(w_2)\rceil)=5+1=6$\\
+Expanding on $\sigma_3$:\\
+$f(\lceil j_3(b_1)\rceil)=4+1=5$\\
+$f(\lceil m_3(w_1)\rceil)=4+2=6$\\
+$f(\lceil m_3(w_2)\rceil)=4+2=6$\\
+$f(\lceil j_3(b_2)\rceil)=4+3=7$\\
+\\
+Expanding on $\sigma_4$:\\
+$f(\lceil j_4(b_1)\rceil)=5+0=5$\\
+\\
+Since $h$ is goal aware and the minimum cost of an operator is 1 we're done at this point. There may be other solutions but none with a cost of less than 5. The resulting plan is: $j_5(b_2),j_2(w_2),j_4(b_1)$ with a total cost of 5 a final state:\\
+$e,w_2,w_1,b_1,b_2$\\
 \\
 \textbf{(b)}
 
