@@ -4,11 +4,18 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{lastpage}
+
+\usepackage {tikz}
+\usetikzlibrary {positioning}
+%\usepackage {xcolor}
+\definecolor {processblue}{cmyk}{0.96,0,0,0}
+
 \fancyhf{}
 \lhead{AI Planning}
 \rhead{Exercise Sheet 4}
-\lfoot{Axel Perschmann, Tarek Saier, dd.11.2014}
-\rfoot{Page \thepage\ of n}
+\lfoot{Axel Perschmann, Tarek Saier, 20.11.2014}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
@@ -20,7 +27,7 @@
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
-Date: & dd.11.2014\\
+Date: & 20.11.2014\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
@@ -62,7 +69,36 @@ $f(\lceil j_4(b_1)\rceil)=5+0=5$\\
 \\
 Since $h$ is goal aware and the minimum cost of an operator is 1 we're done at this point. There may be other solutions but none with a cost of less than 5. The resulting plan is: $j_5(b_2),j_2(w_2),j_4(b_1)$ with a total cost of 5 and a final state:\\
 $e,w_2,w_1,b_1,b_2$\\
-\\
+
+\begin{tikzpicture}[-latex ,auto ,node distance =2 cm and 2.5cm ,on grid ,
+semithick ,
+state/.style ={top color =white , bottom color = processblue!20 ,
+draw,processblue , text=blue }]
+\node[state] (A)
+{$BBWW-$};
+\node[state] (B1) [below left=of A] {$BBW-W$};
+\node[state] (B2) [right =of B1] {$BB-WW$};
+\node[state] (B3) [right =of B2] {$B-WWB$};
+\path (A) edge node[left] {$1+4$} (B1);
+\path (A) edge node[left] {$1+4$} (B2);
+\path (A) edge node[left] {$2+2$} (B3);
+\node[state] (C2) [below =of B1] {$-BWBW$};
+\node[state] (C1) [left =of C2] {$B-WBW$};
+\path (B1) edge node[left] {$2+3$} (C1);
+\path (B1) edge node[left] {$3+3$} (C2);
+\node[state] (C3) [below =of B2] {$-BBWW$};
+\path (B2) edge node[left] {$2+4$} (C3);
+\node[state] (C4) [below =of B3] {$-BWWB$};
+\node[state] (C5) [right=of C4] {$BWW-B$};
+\node[state] (C6) [right=of C5] {$BW-WB$};
+\path (B3) edge node[left] {$3+2$} (C4);
+\path (B3) edge node[left] {$3+2$} (C5);
+\path (B3) edge node[left] {$3+2$} (C6);
+\node[state] (D1) [below =of C5] {$-WWBB$};
+\path (C5) edge node[left] {$5+0$} (D1);
+\end{tikzpicture}
+\vspace{10 mm}
+
 \textbf{(b)} Suppose we loosened the rules of our puzzle in the following way: there are infinitely many empty cells left of the leftmost $b_i$ and right of the rightmost $w_j$. Furthermore jumps over more than 2 tiles are allowed while the calculation of cost follows the original rule but never exceeds 2.\\
 In this relaxed setting the puzzle can always be solved at a cost of\\
 \begin{equation*}
