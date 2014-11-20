@@ -107,6 +107,87 @@ h_r^*(s) = \sum_{i=1}^{\text{number of black tiles}} b_i\times \text{number of w
 Since this is a less restrictive setting $h_r^*(s)\leq h^*(s)$. Furthermore $h_r^*(s)$ is a more general variant of $h(s)$. In other words, for the specific case $I$ we can say $h_r^*(s)=h(s)$ and therefore $h(s)\leq h^*(s)$.
 
 \section*{Exercise 4.2}
-bar
+Start conditions: $\sigma_0 =\{H_x=1, H_y=2, G_x=4, G_y=4\}$, $h(\sigma_0)=5$\\
+Possible actions:\\$northH, south_H, east_H, west_H, north_G, south_G, east_G, west_G$\\
+
+\begin{enumerate}
+\item
+$improve(\sigma_0)$ iterates over possible successor states of $\sigma_0$, until $h(\sigma_1) < h(\sigma_0)$\\
+\begin{tabular}{l r}
+$\sigma_1 = \langle{}\sigma_0, north_H, \{H_x=1, H_y=3, G_x=4, G_y=4\}\rangle$ & $h(\sigma_1)=4$
+\end{tabular}\\
+$h(\sigma_1) < h(\sigma_0)$ is causing the end of $improve(\sigma_0)$
+
+\item
+$\sigma_1$ is not a goal-state yet, thus improve($\sigma_1$) is called.\\
+\begin{tabular}{l r}
+$\sigma_{2} = \langle{}\sigma_1, east_H, \{H_x=2, H_y=3, G_x=4, G_y=4\}\rangle$ & $h(\sigma_{2})=3$
+\end{tabular}\\
+$h(\sigma_2) < h(\sigma_1)$ is causing the end of $improve(\sigma_1)$
+
+\item
+ $\sigma_2$ is not a goal-state yet, thus improve($\sigma_2$) is called.\\
+\begin{tabular}{l r}
+$\sigma_{3} = \langle{}\sigma_{2}, east_H, \{H_x=3, H_y=3, G_x=4, G_y=4\}\rangle$ & $h(\sigma_{3})=2$
+\end{tabular}\\
+$h(\sigma_3) < h(\sigma_2)$ is causing the end of $improve(\sigma_2)$
+
+\item
+ $\sigma_3$ is not a goal-state yet, thus improve($\sigma_3$) is called.\\
+\begin{tabular}{l r}
+$\sigma_{4} = \langle{}\sigma_{3}, south_H, \{H_x=3, H_y=2, G_x=4, G_y=4\}\rangle$ & $h(\sigma_{4})=3$\\
+$\sigma_{5} = \langle{}\sigma_{3}, north_G, \{H_x=3, H_y=3, G_x=4, G_y=5\}\rangle$ & $h(\sigma_{5})=3$\\
+$\sigma_{6} = \langle{}\sigma_{3}, east_G, \{H_x=3, H_y=3, G_x=5, G_y=4\}\rangle$ & $h(\sigma_{6})=3$
+\end{tabular}
+
+\item
+No improvement happened, $improve(\sigma_3)$ still running.\\
+Enforced hill-climbing algorithm will collect all successor states of $\sigma_4$, $\sigma_5$ and $\sigma_6$ for an improvement.\\
+To make sure this solution sheet will not explode in size, we'll only have a look on the most suitable steps, in this case $\sigma_6$\\
+\begin{tabular}{l r}
+$\sigma_{7} = \langle{}\sigma_{6}, south_H, \{H_x=3, H_y=2, G_x=5, G_y=4\}\rangle$ & $h(\sigma_{7})=4$\\
+$\sigma_{8} = \langle{}\sigma_{6}, north_G, \{H_x=3, H_y=3, G_x=5, G_y=5\}\rangle$ & $h(\sigma_{8})=4$\\
+$\sigma_{9} = \langle{}\sigma_{6}, south_G, \{H_x=3, H_y=3, G_x=5, G_y=3\}\rangle$ & $h(\sigma_{9})=2$
+\end{tabular}\\
+$h(\sigma_9) < h(\sigma_6)$ is causing the end of $improve(\sigma_6)$
+
+\item
+ $\sigma_9$ is not a goal-state yet, thus improve($\sigma_9$) is called.\\
+ \begin{tabular}{l r}
+ $\sigma_{10} = \langle{}\sigma_{9}, south_G, \{H_x=3, H_y=3, G_x=5, G_y=2\}\rangle$ & $h(\sigma_{10})=3$\\
+ \end{tabular}
+ 
+ \item
+No improvement happened, $improve(\sigma_9)$ still running.\\
+ \begin{tabular}{l r}
+ $\sigma_{11} = \langle{}\sigma_{10}, west_G, \{H_x=3, H_y=3, G_x=4, G_y=2\}\rangle$ & $h(\sigma_{11})=2$\\
+  \end{tabular}
+ 
+  \item
+No improvement happened, $improve(\sigma_9)$ still running.\\
+ \begin{tabular}{l r}
+ $\sigma_{12} = \langle{}\sigma_{11}, south_G, \{H_x=3, H_y=3, G_x=4, G_y=1\}\rangle$ & $h(\sigma_{12})=3$\\
+ $\sigma_{13} = \langle{}\sigma_{11}, west_G, \{H_x=3, H_y=3, G_x=3, G_y=2\}\rangle$ & $h(\sigma_{13})=1$\\
+ \end{tabular}\\
+$h(\sigma_{13}) < h(\sigma_9)$ is causing the end of $improve(\sigma_9)$
+ 
+\item
+ $\sigma_{13}$ is not a goal-state yet, thus improve($\sigma_{13}$) is called.\\ 
+  \begin{tabular}{l r}
+ $\sigma_{14} = \langle{}\sigma_{13}, north_G, \{H_x=3, H_y=3, G_x=3, G_y=3\}\rangle$ & $h(\sigma_{14})=0$
+  \end{tabular}\\
+$h(\sigma_{14}) < h(\sigma_{13})$ is causing the end of $improve(\sigma_{13})$
+
+\item
+ $\sigma_{14}$ is a goal-state, thus $extract\_solution(\sigma_{14})$ is called.\\
+\end{enumerate}
+
+The solution found by the enforced hill-climbing algorithm:\\
+${north_H, east_H, east_H, east_G, south_G, south_G, west_G, west_G, north_G}$
+
+cost/number of steps: 9
+
+
+
 
 \end{document}
