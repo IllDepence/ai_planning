@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, margin=1.3in]{geometry}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AI Planning}
+\rhead{Exercise Sheet 5}
+\lfoot{Axel Perschmann, Tarek Saier, dd.11.2014}
+\rfoot{Page \thepage\ of n}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength\parindent{0pt}
+
+\newcommand{\h}[0]{\text{--}}
+
+\begin{document}
+\begin{center}
+\Huge{\textbf{AI Planning}}\\
+\LARGE{\textbf{Exercise Sheet 5}}
+\end{center}
+\vspace{2cm}
+\begin{tabular}{ll}
+Date: & dd.11.2014\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 5.1}
+foo
+
+\section*{Exercise 5.2}
+(a) $\Pi^+ = \langle A,I,O,\gamma \rangle$ with $A$, $I$, $\gamma$ unchanged and\\
+\begin{tabular}{rcl}
+$O$ & $=$ & $\{eatCake^+,bakeCake^+\}$\\
+$eatCake^+$ & $=$ & $\langle haveCake, \top \land haveNoCake \land eatenCake\rangle$\\
+$bakeCake^+$ & $=$ & $\langle haveNoCake, haveCake \land \top \rangle$\\
+\end{tabular}\\
+\\
+\\
+(b) $\pi = bakeCake, eatCake$\\
+$\pi$ in $\Pi$ results in $\{haveCake \mapsto 0, eatenCake \mapsto 1, haveNoCake \mapsto 1\}$\\
+$\pi^+$ in $\Pi^+$ results in $\{haveCake \mapsto 1, eatenCake \mapsto 1, haveNoCake \mapsto 1\}$\\
+
+\end{document}
