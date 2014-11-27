@@ -72,4 +72,21 @@ $bakeCake^+$ & $=$ & $\langle haveNoCake, haveCake \land \top \rangle$\\
 $\pi$ in $\Pi$ results in $\{haveCake \mapsto 0, eatenCake \mapsto 1, haveNoCake \mapsto 1\}$\\
 $\pi^+$ in $\Pi^+$ results in $\{haveCake \mapsto 1, eatenCake \mapsto 1, haveNoCake \mapsto 1\}$\\
 
+\section*{Exercise 5.3}
+Considerations:\\
+$h^{Manhattan}(s)$ sums up distances of tiles to their target position.\\
+$h^+(s)$ considers the relaxed planning task with relaxed operators. This means when a tile is moved it moves to the new position but also ''stays'' at the old ($at()$ for the old position is not negated). $\chi$ of each $o^+$ should be the same in $\Pi$ and $\Pi^+$ though.\\
+\\
+\textbf{(a)}\\
+\\
+\textbf{(b)}\\
+$s = \begin{matrix}
+t_0 & t_1 & t_2 & t_3 \\
+t_4 & t_5 & t_6 & t_7 \\
+t_8 & t_9 & t_{10} & t_{11} \\
+t_{12} & t_{13} & t_{14} & - \\ % TODO: change so that h^+ > h^M
+\end{matrix}$\\
+$h^{Manhattan}(s)=$\\
+$h^+(s)=$
+
 \end{document}
