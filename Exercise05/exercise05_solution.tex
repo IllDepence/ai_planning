@@ -7,7 +7,7 @@
 \fancyhf{}
 \lhead{AI Planning}
 \rhead{Exercise Sheet 5}
-\lfoot{Axel Perschmann, Tarek Saier, dd.11.2014}
+\lfoot{Axel Perschmann, Tarek Saier, 27.11.2014}
 \rfoot{Page \thepage\ of n}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
@@ -22,12 +22,42 @@
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
-Date: & dd.11.2014\\
+Date: & 27.11.2014\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise 5.1}
-foo
+Proof by induction over the structure of $\chi$.
+
+Base case $\chi = \top$: then $s' \models \top$.\\
+Base case $\chi = \bot$: then $s \not\models \bot$.\\
+
+Base case $\chi = a \in A$: assume $s \models a$ and $on(s) \subseteq on(s')$. \\
+Wich $a \in on(s)$ we get $a \in on(s')$, hence $s' \models a$.\\
+
+Inductive case $\chi = \chi_1 \land \chi_2$
+
+\begin{tabular}{l l}
+$s \models \chi$ & $\iff  s \models \chi_1 \land \chi_2$ \\
+ & $\iff  s \models \chi_1$ and $s \models \chi_2$\\
+ & $\implies s' \models \chi_1$ and $s' \models \chi_2$\\
+ & $\iff s' \models \chi_1$ and $\chi_2$ \\
+ & $\iff s' \models \chi$ 
+\end{tabular}
+ 
+Inductive case $\chi = \chi_1 \lor \chi_2$ (Analogous to previous case)
+
+\begin{tabular}{l l}
+$s \models \chi$ & $\iff  s \models \chi_1 \lor \chi_2$ \\
+ & $\iff  s \models \chi_1$ or $s \models \chi_2$\\
+ & $\implies s' \models \chi_1$ or $s' \models \chi_2$\\
+ & $\iff s' \models \chi_1$ or $\chi_2$ \\
+ & $\iff s' \models \chi$ 
+\end{tabular}
+                
+
+
+
 
 \section*{Exercise 5.2}
 (a) $\Pi^+ = \langle A,I,O,\gamma \rangle$ with $A$, $I$, $\gamma$ unchanged and\\
