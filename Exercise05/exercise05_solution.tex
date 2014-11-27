@@ -76,7 +76,7 @@ $h^{Manhattan}(s)$ sums up distances of tiles to their target position.\\
 $h^+(s)$ considers the relaxed planning task with relaxed operators. This means when a tile is moved it moves to the new position but also ''stays'' at the old ($at()$ for the old position is not negated). $\chi$ of each $o^+$ should be the same in $\Pi$ and $\Pi^+$ though.\\
 \\
 \textbf{(a)}\\
-$h^{Manhattan}(s)$ is equal to $h^+(s)$ without the restictions given by $\chi$ for each $o^+$. In other words: for $h^{Manhattan}(s)$ you can any tile freely, for $h^+(s)$ you can move tiles freely along the paths where $empty(p_{i,j})$ was made true at one point or was true for $s$ in the first place. Therefore $h^{Manhattan}(s)$ can never yield a larger number than $h^+(s)$.\\
+$h^{Manhattan}(s)$ is equal to $h^+(s)$ without the restictions given by $\chi$ for each $o^+$. In other words: for $h^{Manhattan}(s)$ you can move any tile freely, for $h^+(s)$ you can move tiles freely along the paths where $empty(p_{i,j})$ was made true at one point or was true for $s$ in the first place. Therefore $h^{Manhattan}(s)$ can never yield a larger number than $h^+(s)$.\\
 \\
 \textbf{(b)}\\
 $s = \begin{matrix}
