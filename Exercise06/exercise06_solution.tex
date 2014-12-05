@@ -7,8 +7,8 @@
 \fancyhf{}
 \lhead{AI Planning}
 \rhead{Exercise Sheet 6}
-\lfoot{Axel Perschmann, Tarek Saier, dd.12.2014}
-\rfoot{Page \thepage\ of n}
+\lfoot{Axel Perschmann, Tarek Saier, 05.12.2014}
+\rfoot{Page \thepage\ of 3}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
@@ -22,26 +22,33 @@
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
-Date: & dd.11.2014\\
+Date: & 05.12.2014\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise 6.1}
-foo
 
 \section*{Exercise 6.2}
+$\Pi = \langle A,I,O,\gamma \rangle$ with\\
+$A = \{a,b,c,d\}$\\
+$I = \{a\mapsto 0,b\mapsto 0,c\mapsto 0,d\mapsto 0\}$\\
+$\gamma = a\lor (b\land c\land d)$\\
+$O=\{o_1,o_2\}$\\
+$o_1=\langle \top, b\land c\land d\rangle$\\
+$o_2=\langle b, a\rangle$\\
+\\
 \begin{tabular}{l} % to force the text part and the graph to appear on the same page
 Relaxed planning graph with depth 3. (Sparse labeling due to technical restrictions.)\\
 \includegraphics[scale=0.5]{g62}\\
-\end{tabular}
+\end{tabular}\\
 
 \begin{tabular}{l} % to force the text part and the graph to appear on the same page
-Depth 2, $h_{add}(s)=3$\\
+Depth 2, $h_{add}(I)=3$\\
 \includegraphics[scale=0.5]{g622}\\
-\end{tabular}
+\end{tabular}\\
 
 \begin{tabular}{l} % to force the text part and the graph to appear on the same page
-Depth 3, $h_{add}(s)=2$\\
+Depth 3, $h_{add}(I)=2$\\
 \includegraphics[scale=0.5]{g621}\\
 \end{tabular}
 
