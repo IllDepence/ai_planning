@@ -3,12 +3,13 @@
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{lastpage}
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{AI Planning}
 \rhead{Exercise Sheet 6}
-\lfoot{Axel Perschmann, Tarek Saier, dd.12.2014}
-\rfoot{Page \thepage\ of n}
+\lfoot{Axel Perschmann, Tarek Saier, 05.12.2014}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
@@ -22,37 +23,22 @@
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
-Date: & dd.11.2014\\
+Date: & 05.11.2014\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
-\section*{Exercise 6.1}
-foo
-
 \section*{Exercise 6.2}
-<<<<<<< HEAD
+\begin{itemize}
+\item is important to test for stability in computing $h_{add}$! The reason for this is that, unlike $h_{max}$, cost values of true propositions can decrease from layer to layer.
+\item Stability is archieved after layer $|A|$ in the worst case.
+\end{itemize}
+
 Example for an overestimation:
 \begin{figure}[h!]
 \centering
-\caption{Over Estimation of $h_{add}$}
+\caption{Overestimation of $h_{add}$, Source: Lecture Script}
 \includegraphics[scale=1]{aip08-handout51}
 \end{figure}
-=======
-\begin{tabular}{l} % to force the text part and the graph to appear on the same page
-Relaxed planning graph with depth 3. (Sparse labeling due to technical restrictions.)\\
-\includegraphics[scale=0.5]{g62}\\
-\end{tabular}
-
-\begin{tabular}{l} % to force the text part and the graph to appear on the same page
-Depth 2, $h_{add}(s)=3$\\
-\includegraphics[scale=0.5]{g622}\\
-\end{tabular}
-
-\begin{tabular}{l} % to force the text part and the graph to appear on the same page
-Depth 3, $h_{add}(s)=2$\\
-\includegraphics[scale=0.5]{g621}\\
-\end{tabular}
->>>>>>> 693ecaec3aa6213dc410849f6c6b980bb9c753bd
 
 \section*{Exercise 6.3}
 \begin{tabular}{l} % to force the text part and the graph to appear on the same page
@@ -79,5 +65,9 @@ Relaxed planning graph with depth 3. (Sparse labeling due to technical restricti
 \textbf{(d)} $h_{FF}(s)=4$\\
 \includegraphics[scale=0.5]{g63d}\\
 \end{tabular}
+
+
+\section*{Exercise 6.1}
+
 
 \end{document}
