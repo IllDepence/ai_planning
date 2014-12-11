@@ -3,10 +3,13 @@
 \usepackage{mathtools}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
+
+\newcommand{\sheetNr}{7}
+
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{AI Planning}
-\rhead{Exercise Sheet 7}
+\rhead{Exercise Sheet \sheetNr}
 \lfoot{Axel Perschmann, Tarek Saier, \today}
 \rfoot{Page \thepage\ of \pageref{lastpage}}
 \renewcommand{\headrulewidth}{0.3pt}
@@ -17,7 +20,7 @@
 \begin{document}
 \begin{center}
 \Huge{\textbf{AI Planning}}\\
-\LARGE{\textbf{Exercise Sheet n}}
+\LARGE{\textbf{Exercise Sheet \sheetNr}}
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
@@ -27,12 +30,23 @@ Students: & Axel Perschmann, Tarek Saier
 
 \section*{Exercise 7.1}
 \textbf{(a)} $\Pi'=\{V,I,O,\gamma\}$ with\\
-$V=\{above\h a,above\h b,above\h c,below\h a,below\h b,below\h c\}$\\
+\begin{itemize}
+\item $V=\{above\h a,above\h b,above\h c,below\h a,below\h b,below\h c\}$\\
 $\mathscr{D}_{above\h\Upsilon}=\{A,B,C,n\}\setminus\{\Upsilon\}$\\
 $\mathscr{D}_{below\h\Upsilon}=\{A,B,C,t\}\setminus\{\Upsilon\}$\\
-$I(a)=1$ for $a\in \{below\h b=t,above\h b=A,above\h a=n,below\h c=t,above\h c=n\}$\\
-$I(a)=0$ else\\
-$\gamma=(above\h c=B)\land(above\h a=C)$
+where $\Upsilon\in\{A,B,C\}$
+
+\item $I(a)=1$ for $a\in \{below\h b=t,above\h b=A,above\h a=n,\\
+below\h c=t,above\h c=n\}$\\
+$I(a)=0$ else
+
+\item $O=\{move\h X\h Y\h Z,move\h X\h Table\h Z,move\h X\h Y\h Table\}$\\
+$move\h X\h Y\h Z=\langle\rangle$\\
+$move\h X\h Table\h Z=\langle\rangle$\\
+$move\h X\h Y\h Table=\langle\rangle$
+
+\item $\gamma=(above\h c=B)\land(above\h a=C)$
+\end{itemize}
 
 \section*{Exercise 7.2}
 bar
