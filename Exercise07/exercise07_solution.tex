@@ -51,7 +51,7 @@ for pair-wise distinct $X,Y,Z\in\{A,B,C\}$
 
 \item $\gamma=(above\h c=B)\land(above\h a=C)$
 \end{itemize}
-And the addition\footnote{to make this a bit less verbose and better readable} that every $above|below[:]$$=\Upsilon$ with $\Upsilon\in\{A,B,C\}$ implies it's counterpart (e.g. $above\h A[:]$$=B$ also tests/sets $below\h B[:]$$=A$).\\
+And the addition\footnote{to make this a bit less verbose and better readable} that every $above|below[:]$$=\Upsilon$ with $\Upsilon\in\{A,B,C\}$ implies its counterpart (e.g. $above\h A[:]$$=B$ also tests/sets $below\h B[:]$$=A$).\\
 \\
 \textbf{(b)} $\Pi''=\Pi$\\
 \\
@@ -59,7 +59,33 @@ And the addition\footnote{to make this a bit less verbose and better readable} t
 \newpage
 
 \section*{Exercise 7.2}
-\textbf{(a)} Basic approach: since both $h_1$ and $h_2$ include the blank tile, $h_1+h_2$ is not admissible.\\
+\textbf{(a)} Since both $h_1$ and $h_2$ include the blank tile, $h_1+h_2$ is not admissible.\\
+Proof by counterexample:\\
+$n=1$, $m=2$\\
+\begin{tabular}{lll}
+$s = \begin{matrix}
+t_0 & t_1 & t_2 & t_3 \\
+t_4 & t_5 & t_6 & t_7 \\
+t_8 & t_9 & t_{10} & t_{11} \\
+t_{12} & t_{13} & b & t_{14} \\
+\end{matrix}$ &
+$\alpha_2\text{-view}: \begin{matrix}
+t_0 & - & - & - \\
+- & - & - & - \\
+- & - & - & - \\
+- & - & b & - \\
+\end{matrix}$ &
+$\alpha_1\text{-view}: \begin{matrix}
+- & t_1 & t_2 & t_3 \\
+t_4 & t_5 & t_6 & t_7 \\
+t_8 & t_9 & t_{10} & t_{11} \\
+t_{12} & t_{13} & b & t_{14} \\
+\end{matrix}$
+\end{tabular}\\
+\\
+$h^*(s)=1$\\
+$h_1(s)+h_2(s)=1+1=2$\\
+$2>1$, therefore $h_1+h_2$ is not admissible.\\
 \\
 \textbf{(b)} Basic approach: since for all tiles $t_i$ it holds that $t_i\in h_3$ iff $t_i\not\in h_4$ and vice verca \emph{and} both $h_3$ and $h_4$ do \emph{not} include the blank tile, $h_3+h_4$ is admissible.\\
 \\
