@@ -2,6 +2,7 @@
 \usepackage[a4paper, margin=1.3in]{geometry}
 \usepackage{mathtools}
 \usepackage{fancyhdr}
+\usepackage{mathrsfs}
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{AI Planning}
@@ -11,6 +12,7 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
+\newcommand{\h}[0]{\text{--}}
 
 \begin{document}
 \begin{center}
@@ -24,7 +26,13 @@ Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise 7.1}
-foo
+\textbf{(a)} $\Pi'=\{V,I,O,\gamma\}$ with\\
+$V=\{above\h a,above\h b,above\h c,below\h a,below\h b,below\h c\}$\\
+$\mathscr{D}_{above\h\Upsilon}=\{A,B,C,n\}\setminus\{\Upsilon\}$\\
+$\mathscr{D}_{below\h\Upsilon}=\{A,B,C,t\}\setminus\{\Upsilon\}$\\
+$I(a)=1$ for $a\in \{below\h b=t,above\h b=A,above\h a=n,below\h c=t,above\h c=n\}$\\
+$I(a)=0$ else\\
+$\gamma=(above\h c=B)\land(above\h a=C)$
 
 \section*{Exercise 7.2}
 bar
