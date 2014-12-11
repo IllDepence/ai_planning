@@ -37,16 +37,21 @@ $\mathscr{D}_{below\h\Upsilon}=\{A,B,C,t\}\setminus\{\Upsilon\}$\\
 where $\Upsilon\in\{A,B,C\}$
 
 \item $I(a)=1$ for $a\in \{below\h b=t,above\h b=A,above\h a=n,\\
-below\h c=t,above\h c=n\}$\\
+\hphantom{wwww}below\h c=t,above\h c=n\}$\\
 $I(a)=0$ else
 
 \item $O=\{move\h X\h Y\h Z,move\h X\h Table\h Z,move\h X\h Y\h Table\}$\\
-$move\h X\h Y\h Z=\langle\rangle$\\
-$move\h X\h Table\h Z=\langle\rangle$\\
-$move\h X\h Y\h Table=\langle\rangle$
+$move\h X\h Y\h Z=\langle (below\h X=Y) \land (above\h X=n) \land (above\h Z=n),$\\
+\hphantom{wwww}$(above\h Y:=n) \land (below\h X:=Z) \rangle$\\
+$move\h X\h Table\h Z=\langle(below\h X=t) \land (above\h X=n) \land (above\h Z=n),$\\
+\hphantom{wwww}$(below\h X:=Z)\rangle$\\
+$move\h X\h Y\h Table=\langle(below\h X=Y) \land (above\h X=n),$\\
+\hphantom{wwww}$(above\h Y:=n)\ \land (below\h X:=t)\rangle$\\
+for pair-wise distinct $X,Y,Z\in\{A,B,C\}$
 
 \item $\gamma=(above\h c=B)\land(above\h a=C)$
 \end{itemize}
+And the addition\footnote{to make this a bit less verbose and better readable} that every $above|below[:]=\Upsilon$ with $\Upsilon\in\{A,B,C\}$ implies it's counterpart (e.g. $above\h A[:]=B$ also tests/sets $below\h B[:]=A$).\\
 
 \section*{Exercise 7.2}
 bar
