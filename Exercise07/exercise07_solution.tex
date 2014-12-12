@@ -57,11 +57,11 @@ And the addition\footnote{to make this a bit less verbose and better readable} t
 
 The induced propositional planning task $\Pi''$ is the (regular) planning task $\Pi'' = \langle A',I', O', \gamma’\rangle$, where
 \begin{itemize}
-\item $A' = \{(v,d) | v \in V, d \in \mathscr{D}_V\}$\\
-$A'= \{(above-a, B), (abova-a, C), (above-a, n), (above-b, A), (above-b, C), (above-b, n), (above-c, A), (above-c, B), (above-c, n), (below-a, B), (below-a, C), (below-a, t), (below-b, A), (below-b, C), (below-b, t), (below-c, A), (below-c, B), (below-c, t) \}$
+\item
+$A'= \{(above-a, B), (abova\h a, C), (above-a, n), (above-b, A), (above-b, C), (above-b, n), (above-c, A), (above-c, B), (above-c, n), (below-a, B), (below-a, C), (below-a, t), (below-b, A), (below-b, C), (below-b, t), (below-c, A), (below-c, B), (below-c, t) \}$
 
 \item $I'((v,d)) = 1 iff I(v) = d$\\
-$I'((v,d)) = 1$ $\forall (v,d) \in \{below-b, n), (above-b, A), (above-a, n), (below-c, t), (above-c, n)\}$
+$I'((v,d)) = 1$ for $(v,d) \in \{below\h b, n), (above-b, A), (above-a, n), (below-c, t), (above-c, n)\}$
 
 \item
 $O'=\{move\h X\h Y\h Z,move\h X\h Table\h Z,move\h X\h Y\h Table\}$\\
