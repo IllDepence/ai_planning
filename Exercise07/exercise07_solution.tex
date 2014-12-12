@@ -53,15 +53,15 @@ for pair-wise distinct $X,Y,Z\in\{A,B,C\}$
 \end{itemize}
 And the addition\footnote{to make this a bit less verbose and better readable} that every $above|below[:]$$=\Upsilon$ with $\Upsilon\in\{A,B,C\}$ implies its counterpart (e.g. $above\h A[:]$$=B$ also tests/sets $below\h B[:]=A$).\\
 \\
-\textbf{(b)} $\Pi''=\Pi$\\
-
-The induced propositional planning task $\Pi''$ is the (regular) planning task $\Pi'' = \langle A',I', O', \gamma’\rangle$, where
+\textbf{(b)} The induced propositional planning task $\Pi''$ is the (regular) planning task $\Pi'' = \langle A',I', O', \gamma’\rangle$, where
 \begin{itemize}
 \item
-$A'= \{(above-a, B), (abova\h a, C), (above-a, n), (above-b, A), (above-b, C), (above-b, n), (above-c, A), (above-c, B), (above-c, n), (below-a, B), (below-a, C), (below-a, t), (below-b, A), (below-b, C), (below-b, t), (below-c, A), (below-c, B), (below-c, t) \}$
+$A'= \{(above\h a, B), (abova\h a, C), (above\h a, n), (above\h b, A), (above\h b, C), (above\h b, n),\\
+(above\h c, A), (above\h c, B), (above\h c, n), (below\h a, B), (below\h a, C), (below\h a, t),\\
+(below\h b, A), (below\h b, C), (below\h b, t), (below\h c, A), (below\h c, B), (below\h c, t) \}$
 
 \item $I'((v,d)) = 1 iff I(v) = d$\\
-$I'((v,d)) = 1$ for $(v,d) \in \{below\h b, n), (above-b, A), (above-a, n), (below-c, t), (above-c, n)\}$
+$I'((v,d)) = 1$ for $(v,d) \in \{below\h b, n), (above\h b, A), (above\h a, n), (below\h c, t), (above\h c, n)\}$
 
 \item
 $O'=\{move\h X\h Y\h Z,move\h X\h Table\h Z,move\h X\h Y\h Table\}$\\
