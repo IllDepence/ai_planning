@@ -9,7 +9,11 @@
 \lhead{AI Planning}
 \rhead{Exercise Sheet 6}
 \lfoot{Axel Perschmann, Tarek Saier, 05.12.2014}
+<<<<<<< HEAD
 \rfoot{Page \thepage\ of \pageref{LastPage}}
+=======
+\rfoot{Page \thepage\ of 3}
+>>>>>>> 82633ae9a0568e9ebdf3e2ef1195b4fdc92abcfd
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
@@ -23,6 +27,7 @@
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
+<<<<<<< HEAD
 Date: & 05.11.2014\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
@@ -39,6 +44,37 @@ Example for an overestimation:
 \caption{Overestimation of $h_{add}$, Source: Lecture Script}
 \includegraphics[scale=1]{aip08-handout51}
 \end{figure}
+=======
+Date: & 05.12.2014\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 6.1}
+
+\section*{Exercise 6.2}
+$\Pi = \langle A,I,O,\gamma \rangle$ with\\
+$A = \{a,b,c,d\}$\\
+$I = \{a\mapsto 0,b\mapsto 0,c\mapsto 0,d\mapsto 0\}$\\
+$\gamma = a\lor (b\land c\land d)$\\
+$O=\{o_1,o_2\}$\\
+$o_1=\langle \top, b\land c\land d\rangle$\\
+$o_2=\langle b, a\rangle$\\
+\\
+\begin{tabular}{l} % to force the text part and the graph to appear on the same page
+Relaxed planning graph with depth 3. (Sparse labeling due to technical restrictions.)\\
+\includegraphics[scale=0.5]{g62}\\
+\end{tabular}\\
+
+\begin{tabular}{l} % to force the text part and the graph to appear on the same page
+Depth 2, $h_{add}(I)=3$\\
+\includegraphics[scale=0.5]{g622}\\
+\end{tabular}\\
+
+\begin{tabular}{l} % to force the text part and the graph to appear on the same page
+Depth 3, $h_{add}(I)=2$\\
+\includegraphics[scale=0.5]{g621}\\
+\end{tabular}
+>>>>>>> 82633ae9a0568e9ebdf3e2ef1195b4fdc92abcfd
 
 \section*{Exercise 6.3}
 \begin{tabular}{l} % to force the text part and the graph to appear on the same page

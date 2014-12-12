@@ -2,12 +2,15 @@
 \usepackage[a4paper, margin=1.3in]{geometry}
 \usepackage{mathtools}
 \usepackage{fancyhdr}
+
+\newcommand{\sheetNr}{n}
+
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{AI Planning}
-\rhead{Exercise Sheet n}
-\lfoot{Axel Perschmann, Tarek Saier, dd.mm.yyyy}
-\rfoot{Page \thepage\ of x}
+\rhead{Exercise Sheet \sheetNr}
+\lfoot{Axel Perschmann, Tarek Saier, \today}
+\rfoot{Page \thepage\ of \pageref{lastpage}}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \setlength\parindent{0pt}
@@ -15,15 +18,16 @@
 \begin{document}
 \begin{center}
 \Huge{\textbf{AI Planning}}\\
-\LARGE{\textbf{Exercise Sheet n}}
+\LARGE{\textbf{Exercise Sheet \sheetNr}}
 \end{center}
 \vspace{2cm}
 \begin{tabular}{ll}
-Date: & dd.mm.yyyy\\
+Date: & \today\\
 Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise n.m}
 content here
 
+\label{lastpage}
 \end{document}

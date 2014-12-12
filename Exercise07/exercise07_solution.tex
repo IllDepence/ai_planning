@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, margin=1.3in]{geometry}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+
+\newcommand{\sheetNr}{7}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AI Planning}
+\rhead{Exercise Sheet \sheetNr}
+\lfoot{Axel Perschmann, Tarek Saier, \today}
+\rfoot{Page \thepage\ of \pageref{lastpage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength\parindent{0pt}
+\newcommand{\h}[0]{\text{--}}
+
+\begin{document}
+\begin{center}
+\Huge{\textbf{AI Planning}}\\
+\LARGE{\textbf{Exercise Sheet \sheetNr}}
+\end{center}
+\vspace{2cm}
+\begin{tabular}{ll}
+Date: & \today\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 7.1}
+\textbf{(a)} $\Pi'=\{V,I,O,\gamma\}$ with\\
+\begin{itemize}
+\item $V=\{above\h a,above\h b,above\h c,below\h a,below\h b,below\h c\}$\\
+$\mathscr{D}_{above\h\Upsilon}=\{A,B,C,n\}\setminus\{\Upsilon\}$\\
+$\mathscr{D}_{below\h\Upsilon}=\{A,B,C,t\}\setminus\{\Upsilon\}$\\
+where $\Upsilon\in\{A,B,C\}$
+
+\item $I(a)=1$ for $a\in \{below\h b=t,above\h b=A,above\h a=n,\\
+\hphantom{wwww}below\h c=t,above\h c=n\}$\\
+$I(a)=0$ else
+
+\item $O=\{move\h X\h Y\h Z,move\h X\h Table\h Z,move\h X\h Y\h Table\}$\\
+$move\h X\h Y\h Z=\langle (below\h X=Y) \land (above\h X=n) \land (above\h Z=n),$\\
+\hphantom{wwww}$(above\h Y:=n) \land (below\h X:=Z) \rangle$\\
+$move\h X\h Table\h Z=\langle(below\h X=t) \land (above\h X=n) \land (above\h Z=n),$\\
+\hphantom{wwww}$(below\h X:=Z)\rangle$\\
+$move\h X\h Y\h Table=\langle(below\h X=Y) \land (above\h X=n),$\\
+\hphantom{wwww}$(above\h Y:=n)\ \land (below\h X:=t)\rangle$\\
+for pair-wise distinct $X,Y,Z\in\{A,B,C\}$
+
+\item $\gamma=(above\h c=B)\land(above\h a=C)$
+\end{itemize}
+And the addition\footnote{to make this a bit less verbose and better readable} that every $above|below[:]$$=\Upsilon$ with $\Upsilon\in\{A,B,C\}$ implies its counterpart (e.g. $above\h A[:]$$=B$ also tests/sets $below\h B[:]$$=A$).\\
+\\
+\textbf{(b)} $\Pi''=\Pi$\\
+\\
+\textbf{(c)}
+\newpage
+
+\section*{Exercise 7.2}
+\textbf{(a)} Since both $h_1$ and $h_2$ include the blank tile, $h_1+h_2$ is not admissible.\\
+Proof by counterexample:\\
+$n=1$, $m=2$\\
+\begin{tabular}{lll}
+$s = \begin{matrix}
+t_0 & t_1 & t_2 & t_3 \\
+t_4 & t_5 & t_6 & t_7 \\
+t_8 & t_9 & t_{10} & t_{11} \\
+t_{12} & t_{13} & b & t_{14} \\
+\end{matrix}$ &
+$\alpha_2\text{-view}: \begin{matrix}
+t_0 & - & - & - \\
+- & - & - & - \\
+- & - & - & - \\
+- & - & b & - \\
+\end{matrix}$ &
+$\alpha_1\text{-view}: \begin{matrix}
+- & t_1 & t_2 & t_3 \\
+t_4 & t_5 & t_6 & t_7 \\
+t_8 & t_9 & t_{10} & t_{11} \\
+t_{12} & t_{13} & b & t_{14} \\
+\end{matrix}$
+\end{tabular}\\
+\\
+$h^*(s)=1$\\
+$h_1(s)+h_2(s)=1+1=2$\\
+$2>1$, therefore $h_1+h_2$ is not admissible.\\
+\\
+\textbf{(b)} Basic approach: Goal awareness: for every goal state $s_\gamma$ of the full puzzle, $h_3(s_\gamma)=0$ and $h_4(s_\gamma)=0$. Consistency: since a tile is accounted for in at most one of $\{h_3,h_4\}$, each step necessary to reach the goal counts as either $1$ or $0$ in $h_3+h_4$.\\
+\\
+
+\label{lastpage}
+\end{document}
