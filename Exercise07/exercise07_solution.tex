@@ -79,8 +79,15 @@ $move\h X\h Y\h Table=\langle(below\h X, Y) \land (above\h X, n),$\\
 
 \item $\gamma=(above\h c, B)\land(above\h a, C)$
 \end{itemize}
-\textbf{(c)}
-\newpage
+\textbf{(c)} To show: There is an isomorphism between $\Pi''$ and $\Pi$, therefore $\Pi'$ and $\Pi$ are equivalent.\\
+$f:S\mapsto S''$, with $f(s)=\text{ replace all valiables }X\h on\h Y\text{ in s with}$\\
+\hphantom{wwwwwwwwwwwwwwww}$(above\h y,X)\land(below\h x,Y)\text { and all}$\\
+\hphantom{wwwwwwwwwwwwwwww}$Z\h clear\text{ in s with }(above\h z,n)$\\
+$g:O\mapsto O''$, with $g(o)=\text{ replace all valiables }X\h on\h Y\text{ in o with}$\\
+\hphantom{wwwwwwwwwwwwwwww}$(above\h y,X)\land(below\h x,Y)\text { and all}$\\
+\hphantom{wwwwwwwwwwwwwwww}$Z\h clear\text{ in o with }(above\h z,n)$\\
+\\
+Since both functions are just a relabeling of variables they have the required properties.
 
 \section*{Exercise 7.2}
 \textbf{(a)} Since both $h_1$ and $h_2$ include the blank tile, $h_1+h_2$ is not admissible.\\
@@ -111,8 +118,8 @@ $h^*(s)=1$\\
 $h_1(s)+h_2(s)=1+1=2$\\
 $2>1$, therefore $h_1+h_2$ is not admissible.\\
 \\
-\textbf{(b)} Basic approach: Goal awareness: for every goal state $s_\gamma$ of the full puzzle, $h_3(s_\gamma)=0$ and $h_4(s_\gamma)=0$. Consistency: since a tile is accounted for in at most one of $\{h_3,h_4\}$, each step necessary to reach the goal counts as either $1$ or $0$ in $h_3+h_4$.\\
-\\
+\textbf{(b)} Goal awareness: for every goal state $s_\gamma$ of the full puzzle, $h_3(s_\gamma)=0$ and $h_4(s_\gamma)=0$. Hence $h_3+h_4$ is goal aware.\\
+Consistency: since a tile is accounted for in at most one of $\{h_3,h_4\}$, each step necessary to reach the goal counts as either $1$ or $0$ in $h_3+h_4$. Therefore $h_3+h_4$ is consistent. Since it is goal aware and consistent it is admissible.\\
 
 \label{lastpage}
 \end{document}
