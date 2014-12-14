@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, margin=1.3in]{geometry}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+
+\newcommand{\sheetNr}{8}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AI Planning}
+\rhead{Exercise Sheet \sheetNr}
+\lfoot{Axel Perschmann, Tarek Saier, \today}
+\rfoot{Page \thepage\ of \pageref{lastpage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength\parindent{0pt}
+\newcommand{\h}[0]{\text{--}}
+
+\begin{document}
+\begin{center}
+\Huge{\textbf{AI Planning}}\\
+\LARGE{\textbf{Exercise Sheet \sheetNr}}
+\end{center}
+\vspace{2cm}
+\begin{tabular}{ll}
+Date: & \today\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 8.1}
+
+\section*{Exercise 8.2}
+Notes:
+\begin{itemize}
+\item $\Pi=\langle V,I,O,\gamma\rangle$ (in FDR) is SAS$^+$ iff\\
+\hphantom{tabtab}- $\forall o\in O$ have no conditional effects\\
+\hphantom{tabtab}- $\forall \chi$ of $o\in O$ and $\gamma$ are conjunctions of atoms\\
+\item $\mathscr{T}(\Pi)=\langle S,L,T,s_0,S_\star\rangle$ is the induced transition system\\
+of $\Pi=\langle V,I,O,\gamma\rangle$ where\\
+\hphantom{tabtab}- $S$ is the set of states over $V$\\
+\hphantom{tabtab}- $L=O$\\
+\hphantom{tabtab}- $T=\{\langle s,o,t\rangle\in S\times L\times S|app_o(s)=t\}$\\
+\hphantom{tabtab}- $s_0=I$\\
+\hphantom{tabtab}- $S_\star=\{s\in S|s\models\gamma\}$\\
+\item $P\subseteq V$ is a pattern, $\Pi|_P$ denotes $\Pi$ restricted to the variables in $P$
+\item $\pi_P$ is the projection $S\to S'$ for $P$, $\mathscr{T}^{\pi_P}$ denotes the transition\\
+system induced by $\pi_P$
+\item two transition systems $\mathscr{T}$ and $\mathscr{T}'$ are graph-equivalent ($\mathscr{T}\stackrel{G}{\sim}\mathscr{T}'$) if there exists a bijective function $\phi:S\to S'$ such that\\
+\hphantom{tabtab}- $\phi(s_0)=s'_0$\\
+\hphantom{tabtab}- $s\in S_\star$ iff $\phi(s)\in S'_\star$\\
+\hphantom{tabtab}- $\langle s,\ell,t\rangle\in T$ for \emph{some} $\ell\in L$ iff $\langle\phi(s),\ell',\phi(t)\rangle\in T'$ for \emph{some} $\ell'\in L'$\\
+\end{itemize}
+\textbf{(a)} to show: $\mathscr{T}(\Pi|_P)\stackrel{G}{\sim}\mathscr{T}(\Pi)^{\pi_P}$ if $\Pi$\\
+\hphantom{tabtab}- is an SAS$^+$ planning task\\
+\hphantom{tabtab}- is not trivially unsolvable\\
+\hphantom{tabtab}- has no trivially inapplicable operators\\
+\\
+\textbf{(b)}
+
+\label{lastpage}
+\end{document}
