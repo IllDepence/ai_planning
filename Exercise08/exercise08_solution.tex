@@ -31,22 +31,28 @@ Students: & Axel Perschmann, Tarek Saier
 \section*{Exercise 8.1}
 
 \section*{Exercise 8.2}
-Notes:
+Definitions/Notes:
 \begin{itemize}
-\item $\Pi=\langle V,I,O,\gamma\rangle$ (in FDR) is SAS$^+$ iff\\
+\item (1) $\Pi=\langle V,I,O,\gamma\rangle$ (in FDR) is SAS$^+$ iff\\
 \hphantom{tabtab}- $\forall o\in O$ have no conditional effects\\
-\hphantom{tabtab}- $\forall \chi$ of $o\in O$ and $\gamma$ are conjunctions of atoms\\
-\item $\mathscr{T}(\Pi)=\langle S,L,T,s_0,S_\star\rangle$ is the induced transition system\\
+\hphantom{tabtab}- $\forall \chi$ of $o\in O$ and $\gamma$ are conjunctions of atoms
+\item (2) $\mathscr{T}(\Pi)=\langle S,L,T,s_0,S_\star\rangle$ is the induced transition system\\
 of $\Pi=\langle V,I,O,\gamma\rangle$ where\\
 \hphantom{tabtab}- $S$ is the set of states over $V$\\
 \hphantom{tabtab}- $L=O$\\
 \hphantom{tabtab}- $T=\{\langle s,o,t\rangle\in S\times L\times S|app_o(s)=t\}$\\
 \hphantom{tabtab}- $s_0=I$\\
-\hphantom{tabtab}- $S_\star=\{s\in S|s\models\gamma\}$\\
-\item $P\subseteq V$ is a pattern, $\Pi|_P$ denotes $\Pi$ restricted to the variables in $P$
-\item $\pi_P$ is the projection $S\to S'$ for $P$, $\mathscr{T}^{\pi_P}$ denotes the transition\\
+\hphantom{tabtab}- $S_\star=\{s\in S|s\models\gamma\}$
+\item (3) For $\mathscr{T}=\langle S,L,T,s_0,S_\star\rangle$ and $\alpha:S\to S'$ (a surjective function),\\
+$\mathscr{T}^\alpha=\langle S',L,T',s'_0,S'_\star\rangle$ is the abstraction of $\mathscr{T}$ induced by $\alpha$ where\\
+\hphantom{tabtab}- $S'=\{\alpha(s)|s\in S\}$\\
+\hphantom{tabtab}- $T=\{\langle \alpha(s),\ell,\alpha(t)\rangle|\langle s,\ell,t\rangle\in T\}$\\
+\hphantom{tabtab}- $s'_0=\alpha(s_0)$\\
+\hphantom{tabtab}- $S'_\star=\{\alpha(s)|s\in S_\star\}$
+\item (4) $P\subseteq V$ is a pattern, $\Pi|_P$ denotes $\Pi$ restricted to the variables in $P$
+\item (5) $\pi_P$ is the projection $S\to S'$ for $P$, $\pi_P(s):=s|_P$, $\mathscr{T}^{\pi_P}$ denotes the transition\\
 system induced by $\pi_P$
-\item two transition systems $\mathscr{T}$ and $\mathscr{T}'$ are graph-equivalent ($\mathscr{T}\stackrel{G}{\sim}\mathscr{T}'$) if there exists a bijective function $\phi:S\to S'$ such that\\
+\item (6) two transition systems $\mathscr{T}$ and $\mathscr{T}'$ are graph-equivalent ($\mathscr{T}\stackrel{G}{\sim}\mathscr{T}'$) if there exists a bijective function $\phi:S\to S'$ such that\\
 \hphantom{tabtab}- $\phi(s_0)=s'_0$\\
 \hphantom{tabtab}- $s\in S_\star$ iff $\phi(s)\in S'_\star$\\
 \hphantom{tabtab}- $\langle s,\ell,t\rangle\in T$ for \emph{some} $\ell\in L$ iff $\langle\phi(s),\ell',\phi(t)\rangle\in T'$ for \emph{some} $\ell'\in L'$\\
@@ -56,7 +62,20 @@ system induced by $\pi_P$
 \hphantom{tabtab}- is not trivially unsolvable\\
 \hphantom{tabtab}- has no trivially inapplicable operators\\
 \\
-\textbf{(b)}
+In terms of the definitions/notes above: (6) holds between:\\
+\hphantom{tabtab}- (4), then (2)\\
+\hphantom{tabtab}and\\
+\hphantom{tabtab}- (2), then (5) --- the latter being a special case of (3)\\
+\\
+$\mathscr{T}(\Pi|_P)$:\\
+The difference to $\mathscr{T}(\Pi)$ in this case is $V$ of $\Pi|_P$, which affects $S$ directly and $T$ and $S_\star$ indirectly. $S$ will not include states over $V\setminus P$. $T$ and $S_\star$ will be restricted accordingly.\\
+\\
+$\mathscr{T}(\Pi)^{\pi_P}$:\\
+The difference to $\mathscr{T}(\Pi)$ in this case is that after getting $\mathscr{T}$ the latter is abstracted by means of $\pi_P$. This means for all states $s'\in S'$ of $\mathscr{T}^{\pi_P}$, $s\in S$ of $\mathscr{T}$: $s'=s|_P$. In other words, information about variables $v\notin P$ will be discarded in all $s'$. Again, $T$ and $S_\star$ will be restricted accordingly.\\
+\\
+In both cases all information about variables not in $P$ is discarded. Performing this step by means of (4) before (2) or by means of (5) after (2) does not violate (6).\\
+\\
+\textbf{(b)} Wild guess: replacing effect conditions in $o\in O$ with $\top$ causes problems with the third (see (6) above) condition of graph-equivalence dealing with transitions.
 
 \label{lastpage}
 \end{document}
