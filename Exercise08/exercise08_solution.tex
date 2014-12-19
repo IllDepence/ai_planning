@@ -29,6 +29,14 @@ Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise 8.1}
+General idea: heuristic values are completely dependent on the chosen projection $\pi_P$.\\
+Example:\\
+The heuristic value for the abstraction induced by $\pi_{\text{\{truck A, truck B}\}}$ of $I$ is 0:\\
+$h^{\text{\{truck A, truck B\}}}(LRR)=0$, as opposed to:\\
+$h^{\text{\{package, truck A\}}}(LRR)=2$\\
+$h^{\text{\{package, truck B\}}}(LRR)=2$\\
+\\
+The above illustrates that it is important to choose the pattern wisely. Prune variables that are less significant, keep those that are most relevant for the goal formula.\\
 
 \section*{Exercise 8.2}
 Definitions/Notes:
@@ -75,7 +83,7 @@ The difference to $\mathscr{T}(\Pi)$ in this case is that after getting $\mathsc
 \\
 In both cases all information about variables not in $P$ is discarded. Performing this step by means of (4) before (2) or by means of (5) after (2) does not violate (6).\\
 \\
-\textbf{(b)} Wild guess: replacing effect conditions in $o\in O$ with $\top$ causes problems with the third (see (6) above) condition of graph-equivalence dealing with transitions.
+\textbf{(b)} Replacing effect conditions in $o\in O$ with $\top$ causes problems with the third (see (6) above) condition of graph-equivalence that deals with transitions.
 
 \label{lastpage}
 \end{document}
