@@ -42,7 +42,32 @@ $h^\mathscr{C}=max\{h^{P_1}+h^{P_2},h^{P_1}+h^{P_6}+h^{P_9},h^{P_1}+h^{P_7},h^{P
 \hphantom{tabta}$h^{\{at\h goal_{s1},content_H\}}+h^{\{at\h goal_{s2},content_D\}},h^{\{at\h goal_{s1},content_G\}}+h^{\{at\h goal_{s2},content_D\}},$\\
 \hphantom{tabta}$h^{\{at\h goal_{s2},content_D\}}+h^{\{at\h goal_{s1},content_Q\}}\}$\\
 \\
-\textbf{(c)}\\
+Algebraic implification:\\
+$h^\mathscr{C}=max\{h^{\{at\h goal_{s2}\}}+max\{h^{\{at\h goal_{s1},position_{s1}\}},h^{\{at\h goal_{s1},content_H\}}+h^{\{content_A,content_E\}},$\\
+\hphantom{tabta}$h^{\{at\h goal_{s1},content_G\}}\},h^{\{at\h goal_{s1},position_{s1}\}}+h^{\{at\h goal_{s2},position_{s2}\}},h^{\{at\h goal_{s1},position_{s1},position_{p}\}},$\\
+\hphantom{tabta}$h^{\{position_{s1},position_{p}\}},h^{\{at\h goal_{s2},content_D\}}+max\{h^{\{at\h goal_{s1},content_H\}},h^{\{at\h goal_{s1},content_G\}},$\\
+\hphantom{tabta}$h^{\{at\h goal_{s1},content_Q\}}\}\}$\\
+Dominance pruning:\\
+$h^\mathscr{C}=max\{h^{\{at\h goal_{s2}\}}+max\{h^{\{at\h goal_{s1},position_{s1}\}},h^{\{at\h goal_{s1},content_H\}}+h^{\{content_A,content_E\}},$\\
+\hphantom{tabta}$h^{\{at\h goal_{s1},content_G\}}\},h^{\{at\h goal_{s1},position_{s1}\}}+h^{\{at\h goal_{s2},position_{s2}\}},h^{\{at\h goal_{s1},position_{s1},position_{p}\}},$\\
+\hphantom{tabta}$h^{\{at\h goal_{s2},content_D\}}+max\{h^{\{at\h goal_{s1},content_H\}},h^{\{at\h goal_{s1},content_G\}},h^{\{at\h goal_{s1},content_Q\}}\}\}$\newpage
+\textbf{(c)} Obviously not reasonable is:\\
+\begin{tabular}{c|l}
+Pattern & Reason\\
+\hline
+$P_9$ & random positions, no relevance for goal\\
+\end{tabular}\\
+\\
+Most likely not reasonable are:\\
+\begin{tabular}{c|l}
+Pattern & Reason\\
+\hline
+$P_{6-8,10}$ & one goal relevant variable + random position\\
+$P_1$ & by itself reasonable, but included in $P_3$\\
+$P_5$ & by itself reasonable, but included in $P_4$\\
+\end{tabular}\\
+\\
+$h^\mathscr{C}=max\{h^{P_2}+h^{P_3},h^{P_4}\}$\\
 
 \label{lastpage}
 \end{document}
