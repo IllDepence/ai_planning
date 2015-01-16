@@ -34,21 +34,73 @@ Students: & Axel Perschmann, Tarek Saier
 \begin{tabular}{r|cccccc}
 prop $p$ & s & b & c & d & e & t\\
 \hline
-$h^{c_i}_{max}(p)$ &   &   &   &   &   &  
+$h^{c_i}_{max}(p)$ & 0 & 1 & 1 & 2 & 2 & 3
 \end{tabular}\\
 \\
 \begin{tabular}{r|cccccc}
 action $o$ & $o_1$ & $o_2$ & $o_3$ & $o_4$ & $o_5$ & $o_6$\\
 \hline
-pcf $D_i(o)$ &   &   &   &   &   &  
+pcf $D_i(o)$ & s & b & c & e & e & e
 \end{tabular}\\
 \\
 $G_i:$\\
-%\includegraphics[scale=0.7]{jugraph}\\
-$V^*_i=\{\}$\\
-$V^0_i=\{\}$\\
+\includegraphics[scale=0.5]{jugraph1}\\
+$V^*_i=\{t\}$\\
+$V^0_i=\{s,b,c,d,e\}$\\
 $V^b_i=\{\}$\\
-$h_{\text{LM-cut}}(I)$ so far = 
+$L_i=\{o_4,o_5\}$\\
+$h_{\text{LM-cut}}(I)$ so far = 1\\
+\\
+\textbf{Iteration i=2}\\
+\\
+\begin{tabular}{r|cccccc}
+prop $p$ & s & b & c & d & e & t\\
+\hline
+$h^{c_i}_{max}(p)$ & 0 & 1 & 1 & 2 & 2 & 2
+\end{tabular}\\
+\\
+\begin{tabular}{r|cccccc}
+action $o$ & $o_1$ & $o_2$ & $o_3$ & $o_4$ & $o_5$ & $o_6$\\
+\hline
+pcf $D_i(o)$ & s & b & c & e & e & e
+\end{tabular}\\
+\newpage
+$G_i:$\\
+\includegraphics[scale=0.5]{jugraph2}\\
+$V^*_i=\{t,e\}$\\
+$V^0_i=\{s,b,c,d\}$\\
+$V^b_i=\{\}$\\
+$L_i=\{o_3\}$\\
+$h_{\text{LM-cut}}(I)$ so far = 2\\
+\\
+\textbf{Iteration i=3}\\
+\\
+\begin{tabular}{r|cccccc}
+prop $p$ & s & b & c & d & e & t\\
+\hline
+$h^{c_i}_{max}(p)$ & 0 & 1 & 1 & 2 & 1 & 1
+\end{tabular}\\
+\\
+\begin{tabular}{r|cccccc}
+action $o$ & $o_1$ & $o_2$ & $o_3$ & $o_4$ & $o_5$ & $o_6$\\
+\hline
+pcf $D_i(o)$ & s & b & c & e & e & e
+\end{tabular}\\
+\\
+$G_i:$\\
+\includegraphics[scale=0.5]{jugraph3}\\
+$V^*_i=\{t,e,c\}$\\
+$V^0_i=\{s,b,d\}$\\
+$V^b_i=\{\}$\\
+$L_i=\{o_1\}$\\
+$h_{\text{LM-cut}}(I)$ so far = 3\\
+\\
+\\
+\textbf{Iteration i=4}\\
+\\
+This is when $h^{c_i}_{max}(t)=0$. The task states not to give the pcf, $G_i$, etc. for this iteration.\\
+\\
+$h_{\text{LM-cut}}(I)=4$
 
 \section*{Exercise 10.2}
 \textbf{(a)} \\
