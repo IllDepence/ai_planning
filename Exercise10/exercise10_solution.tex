@@ -103,9 +103,23 @@ This is when $h^{c_i}_{max}(t)=0$. The task states not to give the pcf, $G_i$, e
 $h_{\text{LM-cut}}(I)=4$
 
 \section*{Exercise 10.2}
-\textbf{(a)} \\
+\textbf{(a)} The transition system for a planning task $\Pi$ shows all possible (as in reachable from $I$) combinations of variable values (nodes) connected through edges that represent operators leading from one set of variable values to another. By abstracting $\Pi$ to one variable $v$ the transition system is reduced to only represent changes in the value of $v$. Edges still represent possible transitions achieved through the application of operators. Possible values of a variable plus possible transitions is exactly what a DTG is.\\
 \\
-\textbf{(b)} \\
+\textbf{(b)}\\
+$act\_o:=\emptyset$\\
+generate transition system for $\Pi|_v$ for every $v\in V$\\
+for all $o\in O$:\\
+\hphantom{tab}$act:=1$\\
+\hphantom{tab}for all $v\in prevars(o)$:\\
+\hphantom{tabtab}if there is no path from $s(v)$ to $pre(o)(v)$ in $\Pi|_v$:\\
+\hphantom{tabtabtab}$act:=0$\\
+\hphantom{tabtab}if $v$ is goal-related and there is no path from $pre(o)(v)$ to $\gamma(v)$ in $\Pi|_v$:\\
+\hphantom{tabtabtab}$act:=0$\\
+\hphantom{tab}for all $v\in effvars(o)$:\\
+\hphantom{tabtab}if $v$ is goal-related and there is no path from $eff(o)(v)$ to $\gamma(v)$ in $\Pi|_v$:\\
+\hphantom{tabtabtab}$act:=0$\\
+\hphantom{tab}if $act==1$:\\
+\hphantom{tabtab}$act\_o.push(o)$\\
 
 \label{lastpage}
 \end{document}
