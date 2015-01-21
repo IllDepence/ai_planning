@@ -36,8 +36,45 @@ Students: & Axel Perschmann, Tarek Saier
 \caption{breadth-first search graph (with dublicate detection)}
 \end{figure}
 
-\subsection*{(b)}
+\subsection*{(b) Not finished yet.}
+\subsubsection*{First Node Expansion}
+Initial disjunctive action landmark: $L = \{\text{wear-left-shoe, wear-right-shoe}\}$ (ToDo: explain why)
 
+Compute $T_S$:
+\begin{enumerate}
+\item Include wear-left-shoe in $T_S$ as disjunctive action landmark
+\item no other applicable operators interfere with wear-left-shoe
+\item for go-to-university, which is not applicable yet $T_S$ contains a necessary enabling set.
+\end{enumerate}
+$T_S = \{\text{wear-left-shoe}\}$
+
+\subsubsection*{Second Node Expansion}
+disjunctive action landmark: $L = \{\text{wear-right-shoe}\}$
+Compute $T_S$:
+\begin{enumerate}
+\item Include wear-right-shoe in $T_S$ as disjunctive action landmark
+\item no other applicable operators interfere with wear-right-shoe
+\item for go-to-university, which is not applicable yet $T_S$ contains a necessary enabling set.
+\end{enumerate}
+$T_S = \{\text{wear-right-shoe}\}$
+
+\subsubsection*{Third Node Expansion}
+disjunctive action landmark: $L = \{\text{go-to-university}\}$
+Compute $T_S$:
+\begin{enumerate}
+\item Include go-to-university in $T_S$ as disjunctive action landmark
+\item Include hat in $T_S$ since it interferes with go-to-university (go-to-university disables hat)
+\end{enumerate}
+$T_S = \{\text{go-to-university, hat}\}$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{breadthFirstStrongStubborn}
+\caption{breadth-first search graph using strong stubborn set pruning}
+\end{figure}
+
+\subsection*{Conclusion}
+11 vs 5 Node Expansions
 
 \section*{Exercise 11.2}
 
@@ -91,7 +128,8 @@ Nice amount of pruning.
 \caption{weakStubborn}
 \end{figure}
 
-Conclusion: Weak stubborn sets admit exponentially more pruning than strong stubborn sets.
+\subsection*{Conclusion}
+Weak stubborn sets admit exponentially more pruning than strong stubborn sets.
 
 \label{lastpage}
 \end{document}
