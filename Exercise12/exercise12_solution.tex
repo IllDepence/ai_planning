@@ -38,9 +38,22 @@ $\delta^{bwd}_G(I')=3$
 \section*{Exercise 12.2}
 Definitions:\\
 $img_o(s)=\{s'\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
-$wpreimg_o(s')=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
+$wpreimg_o(T)=\bigcup_{s\in T}\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
 $spreimg_o(T)=\{s\in S\text{ }|\text{ }\exists s'\in T:s\stackrel{o}{\to}s'\land img_o(s)\subseteq T\}$\\
-Since the given transition system maps every state to \emph{exactly one} other state (more formally: $\forall s\in S:|img_{o_s}(s)|=1$) we can transform the definition of a strong preimage of a \emph{set of states} to one of a \emph{single state}.
+\\
+The definition of a weak preimage can be reformulated as follows:\\
+$wpreimg_o(T)=\{s\in S\text{ }|\text{ }\exists s'\in T:s\stackrel{o}{\to}s'\}$\\
+\\
+Since in the given transition system an operator leads from a state in which it is applicaple to \emph{exactly one} state we can further reformulate:\\
+$wpreimg_o(T)=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
+\\
+For the strong preimage, performing the same step we get:\\
+$spreimg_o(T)=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\land img_o(s)\subseteq T\}$\\
+\\
+Again, since there is only one state an operator can lead to from a given state, $s\stackrel{o}{\to}s'$ implies $img_o(s)\subseteq T$. We therefore get:\\
+$spreimg_o(T)=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\land \top\}$\\
+\hphantom{tabtabtabtab}$=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
+\hphantom{tabtabtabtab}$=wpreimg_o(T)$\\
 
 \section*{Exercise 12.3}
 
