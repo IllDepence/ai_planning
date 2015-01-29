@@ -36,6 +36,11 @@ $D^{bwd}_3:=\{\gamma,o_1,o_2,o_3\}$ \hphantom{tabtab} //$\neg a\land b$ is an ef
 $\delta^{bwd}_G(I')=3$
 
 \section*{Exercise 12.2}
+Definitions:\\
+$img_o(s)=\{s'\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
+$wpreimg_o(s')=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\}$\\
+$spreimg_o(T)=\{s\in S\text{ }|\text{ }\exists s'\in T:s\stackrel{o}{\to}s'\land img_o(s)\subseteq T\}$\\
+Since the given transition system maps every state to \emph{exactly one} other state (more formally: $\forall s\in S:|img_{o_s}(s)|=1$) we can transform the definition of a strong preimage of a \emph{set of states} to one of a \emph{single state}.
 
 \section*{Exercise 12.3}
 
