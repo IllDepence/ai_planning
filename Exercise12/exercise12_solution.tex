@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, margin=1.3in]{geometry}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+
+\newcommand{\sheetNr}{12}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AI Planning}
+\rhead{Exercise Sheet \sheetNr}
+\lfoot{Axel Perschmann, Tarek Saier, \today}
+\rfoot{Page \thepage\ of \pageref{lastpage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\setlength\parindent{0pt}
+\newcommand{\h}[0]{\text{--}}
+
+\begin{document}
+\begin{center}
+\Huge{\textbf{AI Planning}}\\
+\LARGE{\textbf{Exercise Sheet \sheetNr}}
+\end{center}
+\vspace{2cm}
+\begin{tabular}{ll}
+Date: & \today\\
+Students: & Axel Perschmann, Tarek Saier
+\end{tabular}
+
+\section*{Exercise 12.1}
+$D^{bwd}_0:=\{\gamma\}$ \hphantom{tabtab} //per definition\\
+$D^{bwd}_1:=\{\gamma,o_1\}$ \hphantom{tabtab} //$a$ is precondition, $b$ is an effect in any case\\
+$D^{bwd}_2:=\{\gamma,o_1,o_2\}$ \hphantom{tabtab} // $a$ is an effect in any case\\
+$D^{bwd}_3:=\{\gamma,o_1,o_2,o_3\}$ \hphantom{tabtab} //$\neg a\land b$ is an effect in any case\\
+$\delta^{bwd}_G(I')=3$
+
+\section*{Exercise 12.2}
+
+\section*{Exercise 12.3}
+
+\label{lastpage}
+\end{document}
