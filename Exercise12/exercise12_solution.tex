@@ -56,6 +56,26 @@ $spreimg_o(T)=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\land \top\}$\\
 \hphantom{tabtabtabtab}$=wpreimg_o(T)$\\
 
 \section*{Exercise 12.3}
+\subsection*{(a)}
+Nondeterministic planning task: $\Pi = \langle V, I, O, \gamma\rangle$, where\\
+
+$V = \{L_1, L_2, R_1, R_2\} \in \{e, x, y\}$
+
+$I = \{L_1 \to e, L_2 \to e, R_1 \to e, R_2 \to e\}$
+
+$O = \{o_L, o_R\}$
+
+$\gamma = \{(L_1=x \land L_2=x) \lor (R_1=x \land R_2=x) \lor (L_1=x \land R_1=x) \lor (L_2=x \land R_2=x) \lor (L_1=x \land R2=x) \lor (L_2=x \land R_1=x)   \}$, where \\
+
+$o_L = \langle L_1=e \lor L_2=e, (L_1=e \to L_1=x) \land (\lnot L_1=e \to L_2=x)\rangle$ \\
+$o_R = \langle R_1=e \lor R_2=e, (R_1=e \to R_1=x) \land (\lnot R_1=e \to R_2=x)\rangle$
+
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{NondeterministicTicTacToe}
+\caption{Nondeterministic Transition Graph: TicTacToe}
+\end{figure}
+
+
 
 \label{lastpage}
 \end{document}
