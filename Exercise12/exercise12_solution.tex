@@ -29,11 +29,12 @@ Students: & Axel Perschmann, Tarek Saier
 \end{tabular}
 
 \section*{Exercise 12.1}
+Let $s_{(o_i,...,o_j)}$ denote a state that is backward reachable from $\gamma$ by successively following the ordered list of operators $(o_i,...,o_j)$.\\
 $D^{bwd}_0:=\{\gamma\}$ \hphantom{tabtab} //per definition\\
-$D^{bwd}_1:=\{\gamma,o_1\}$ \hphantom{tabtab} //$a$ is precondition, $b$ is an effect in any case\\
-$D^{bwd}_2:=\{\gamma,o_1,o_2\}$ \hphantom{tabtab} // $a$ is an effect in any case\\
-$D^{bwd}_3:=\{\gamma,o_1,o_2,o_3\}$ \hphantom{tabtab} //$\neg a\land b$ is an effect in any case\\
-$\delta^{bwd}_G(I')=3$
+$D^{bwd}_1:=\{\gamma,s_{(o_1)}\}$ \hphantom{tabtab} //$a$ is precondition, $b$ is an effect in any case\\
+$D^{bwd}_2:=\{\gamma,s_{(o_1)},s_{(o_1,o_2)}\}$ \hphantom{tabtab} // $a$ is an effect in any case\\
+$D^{bwd}_3:=\{\gamma,s_{(o_1)},s_{(o_1,o_2)},s_{(o_1,o_2,o_3)}\}$ \hphantom{tabtab} //$\neg a\land b$ is an effect in any case\\
+$\delta^{bwd}_G(I')=\delta^{bwd}_G(s_{(o_1,o_2,o_3)})=3$
 
 \section*{Exercise 12.2}
 Definitions:\\
@@ -59,7 +60,7 @@ $spreimg_o(T)=\{s\in S\text{ }|\text{ }s\stackrel{o}{\to}s'\land \top\}$\\
 \subsection*{(a)}
 Nondeterministic planning task: $\Pi = \langle V, I, O, \gamma\rangle$, where\\
 
-$V = \{L_1, L_2, R_1, R_2\} \in \{e, x, y\}$
+$V = \{L_1, L_2, R_1, R_2\}$, $\mathscr{D}_{v\in V}=\{e, x, y\}$
 
 $I = \{L_1 \to e, L_2 \to e, R_1 \to e, R_2 \to e\}$
 
